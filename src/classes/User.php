@@ -20,12 +20,18 @@ use Athernos\classes\Crud;
                 $dados['nome'] = ucfirst($dados['nome']);
                 $cond = "email='$dados[email]'";    
                 if (($this->select("email","usuarios", $cond)->num_rows > 0)){
-
-                };
-                
-            }
-            
-               
+                    return "Usuario ja existente";
+                }else{
+                    $obj->insert("usuarios",$dados);
+                    $_SESSION['cad'] = true;
+                    return "Usuario cadastrado com sucesso";
+                }
+            }else{
+                return "Senhas não coincidem";
+                }                   
+        }
+        public function listarUser(){
+            $this->
         }
         }
     

@@ -27,7 +27,7 @@
             // echo $this->conn->query($sql);
         }
 
-        private function insert($tabela, $dados){
+        public function insert($tabela, $dados){
             $col = "";
             $val = "";
 
